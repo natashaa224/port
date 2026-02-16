@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevith K - Projects</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <img class="left" src="./jk-removebg-preview.png" alt="Jeevith K">
+        
+        <div class="right">
+            <a href="./index.html"><button class="btn">Home</button></a>
+            <a href="./resume.html"><button class="btn">Resume</button></a>
+            <a href="./project.html"><button class="contact-btn">Projects</button></a>
+        </div>
+    </nav>
+    
+    <div class="hero1">
+        <a style="text-decoration: none; color: black;" href="https://github.com/Jeevith252/Alert_Drive_Dashboard">
+            <div class="project-container">
+                <h2>Alert-Drive-Dashboard</h2>
+                <p>AlertDrive Dashboard is a driver fatigue monitoring system that detects eye blinking, yawning, and drowsiness using AI and camera-based analysis. It provides real-time alerts and live status updates to help prevent accidents and improve road safety.</p>
+            </div>
+        </a>
+
+        <a style="text-decoration: none; color: black;" href="https://github.com/Jeevith252/Air-Piano">
+            <div class="project-container">
+                <h2>Air Piano</h2>
+                <p>Air Piano is a virtual piano system that lets users play music by moving their fingers in the air using camera-based hand tracking and computer vision. It converts gestures into musical notes in real time.</p>
+            </div>
+        </a>
+
+        <a style="text-decoration: none; color: black;" href="https://github.com/Jeevith252/pc_autolock_system">
+            <div class="project-container">
+                <h2>PC Auto Lock System</h2>
+                <p>PC Auto Lock System is a software solution that automatically locks a computer screen when the user is away from their desk. It uses motion sensors and AI to detect inactivity and secure the system.</p>
+            </div>
+        </a>
+
+        <a style="text-decoration: none; color: black;" href="https://github.com/Jeevith252/Virtual_mouse">
+            <div class="project-container">
+                <h2>Virtual Mouse</h2>
+                <p>Virtual Mouse is a computer vision-based system that allows users to control their mouse pointer using hand gestures captured by a camera. It enables intuitive and hands-free navigation of the desktop environment.</p>
+            </div>
+        </a>
+    </div>
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.project-container').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

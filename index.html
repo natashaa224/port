@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevith K - Portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <img class="left" src="./jk-removebg-preview.png" alt="Jeevith K">
+        
+        <div class="right">
+            <a href="./index.html"><button class="btn">Home</button></a>
+            <button class="btn" id="resumeBtn">Resume</button>
+            <a href="./project.html"><button class="contact-btn">Projects</button></a>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="content">
+            <h1>Hi, I am</h1>
+            <h2>Jeevith K</h2>
+            <p>Data Analyst skilled in interpreting data to generate insights and support decision-making.
+Front-end Developer experienced in building responsive, user-friendly web interfaces.</p>
+            
+            <div style="margin-top: 60px;">
+                <a href="https://www.linkedin.com/in/jeevith-k-47b4162a2">  
+                    <img class="ct" src="./linkedin.png" alt="LinkedIn"></a>
+
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jeevithkampa252@gmail.com">
+                    <img class="ct" src="./gmail.png" alt="Gmail"></a>
+
+                <a href="https://github.com/Jeevith252">
+                    <img class="ct" src="./github-circle-1.png" alt="GitHub"></a>
+                
+                <a href="https://leetcode.com/u/Jeevith_k252/">
+                    <img class="ct" src="./LeetCode_logo_black.png" alt="LeetCode"></a>
+
+                <a href="https://www.instagram.com/_jeevith_kampa_?igsh=Y3NkbTZ5ZmQ5NnI5">
+                    <img class="ct" src="./ig.png" alt="Instagram"></a>
+            </div>
+        </div>
+
+        <img class="img" src="./988-9886269_blank-person-facebook-no-profile.png" alt="Profile">
+    </div>
+
+    <div class="resume-overlay" id="resumeOverlay">
+        <div class="resume-content">
+            <iframe src="./Jeevith_K_Resume.pdf" class="resume-frame"></iframe>
+            <button class="close-btn" onclick="closeResume()">✕</button>
+        </div>
+    </div>
+    <script>
+        const resumeBtn = document.getElementById("resumeBtn");
+        const overlay = document.getElementById("resumeOverlay");
+
+        resumeBtn.addEventListener("click", function(e) {
+            const rect = resumeBtn.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            overlay.style.setProperty("--x", x + "px");
+            overlay.style.setProperty("--y", y + "px");
+
+            overlay.classList.add("active");
+        });
+
+        function closeResume() {
+        
+            overlay.classList.remove("active");
+        }
+        overlay.addEventListener('transitionend', function() {
+            if (overlay.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
